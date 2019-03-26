@@ -66,7 +66,7 @@ public class Demo
 	@Test
 	public void test2()
 	{
-		m1(1);
+		//m1(1);
 	}
 	
 	public void m1(String age)
