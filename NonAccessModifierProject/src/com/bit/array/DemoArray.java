@@ -104,7 +104,7 @@ public class DemoArray
 	{
 		for(int j=0;j<v[i].length;j++)
 		{
-		System.out.println(v[i]);
+		System.out.println(v[i][j]);
 		}
 	}
 	}
