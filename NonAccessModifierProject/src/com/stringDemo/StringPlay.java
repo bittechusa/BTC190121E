@@ -86,8 +86,15 @@ public class StringPlay
 	Integer.parseInt("8");
 	//homework 
 	//how to parse int to string
+	//how to find duplicate character
+	//is given string palindrom
+	//given string is "12asd32" manupulate this to get result 44
+	//let say number is from 1 to 100 if number is visible by 3 print "asad"
+	// if number is visible by 5 print "shahid"
+	 //if number is visible by 3 and 5 print "asadshahid"
 	
-	
+	//got to eshopper24.com click cotton saree loop through on products if u see any product says "sold out"
+	//skip it to click
 	
 	
 	
