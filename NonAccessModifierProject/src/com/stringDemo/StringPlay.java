@@ -7,12 +7,14 @@ public class StringPlay
 	StringBuffer s=new StringBuffer("how are you");
 	String s6=new String("how are you");
 	String s7=new String("how are you");
+	
 	String s1="how are you";
 	String s5="how are you";
+	
 	@Test
 	public void playWithStringMethod()
 	{
-		String s2=s1.concat(" doing");
+		String s2 = s1.concat(" 100");
 		System.out.println(s1);
 		System.out.println(s2);
 		
@@ -21,13 +23,13 @@ public class StringPlay
 		System.out.println(s3);
 		
 		s1.length();
-		System.out.println(s1.substring(3, 7));
+		System.out.println(s1.substring(1, 7));
 		s1.substring(7);
 		s1.charAt(0);
 		int g=s1.indexOf('o');
 		s1.indexOf('o', g+1);
 		
-		System.out.println("ink".compareTo("ink"));
+		System.out.println("Ink".compareTo("ink"));
 		s1.endsWith("you");
 		System.out.println(s1.equals(s5));
 		System.out.println(s1==s5);
@@ -35,7 +37,9 @@ public class StringPlay
 		System.out.println(s6==s7);
 		int h=s6.hashCode();
 		int h1=s7.hashCode();
+		System.out.println("____________");
 		System.out.println(h==h1);
+		//String s1="how are you";
 		char c[]=s1.toCharArray();
 		s1.startsWith("how");
 		s1.isEmpty();
