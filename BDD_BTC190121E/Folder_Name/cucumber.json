@@ -1,0 +1,149 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 2,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 225289145,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "open browser",
+            "match": {
+              "location": "logInStep.open_browser(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "chrome"
+                ],
+                "line": 4
+              },
+              {
+                "cells": [
+                  "firefox"
+                ],
+                "line": 5
+              }
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 337124,
+              "error_message": "java.lang.NullPointerException\n\tat com.login.logInStep.go_to_url(logInStep.java:56)\n\tat ✽.And go to url(login.feature:6)\n",
+              "status": "failed"
+            },
+            "line": 6,
+            "name": "go to url",
+            "match": {
+              "location": "logInStep.go_to_url()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 268193,
+              "status": "passed"
+            },
+            "match": {
+              "location": "logInStep.before()"
+            }
+          },
+          {
+            "result": {
+              "duration": 54599,
+              "status": "passed"
+            },
+            "match": {
+              "location": "logInStep.before1()"
+            }
+          }
+        ],
+        "line": 9,
+        "name": "valid credantial",
+        "description": "",
+        "id": "validate-login-feature;valid-credantial",
+        "after": [
+          {
+            "result": {
+              "duration": 71771,
+              "status": "passed"
+            },
+            "match": {
+              "location": "logInStep.end1()"
+            }
+          },
+          {
+            "result": {
+              "duration": 46471,
+              "status": "passed"
+            },
+            "match": {
+              "location": "logInStep.end()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 11,
+            "name": "user type userid and password",
+            "match": {
+              "location": "logInStep.user_type_userid_and_password()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 12,
+            "name": "user click signin button",
+            "match": {
+              "location": "logInStep.user_click_signin_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 13,
+            "name": "user will able to see his profile page",
+            "match": {
+              "location": "logInStep.user_will_able_to_see_his_profile_page()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 8,
+            "name": "@smoke"
+          }
+        ]
+      }
+    ],
+    "name": "validate login feature",
+    "description": "",
+    "id": "validate-login-feature",
+    "keyword": "Feature",
+    "uri": "login.feature"
+  }
+]
