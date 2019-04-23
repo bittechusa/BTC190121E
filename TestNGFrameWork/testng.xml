@@ -1,0 +1,26 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="anything">
+<test name ="jaichatai">
+<packages>
+<package name="com.bit.test"></package>
+</packages>
+<!-- <classes>
+<class name="com.bit.test.RegressionTest"></class>
+<class name="com.bit.test.SmokeTest"></class>
+</classes> -->
+</test>
+<test name ="no duplicate name">
+<classes>
+<class name="com.bit.test.RegressionTest">
+<methods>
+<include name="m1"></include>
+<exclude name="m2"></exclude>
+</methods>
+</class>
+</classes>
+</test>
+
+
+
+
+</suite>

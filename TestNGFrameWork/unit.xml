@@ -1,0 +1,31 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="dfh">
+<test name="fdgh">
+<groups>
+<run>
+<include name="reg"></include>
+</run>
+</groups>
+<packages>
+<package name="com.bit.test"></package>
+</packages>
+</test>
+
+<!-- <test name="">
+<classes>
+<class name="com.TestDmoke"></class>
+</classes>
+</test> -->
+
+
+
+<!-- test name="">
+<classes>
+<class name="com.TestDmoke">
+<methods>
+<include name="m1"></include>
+</methods>
+</class>
+</classes>
+</test> -->
+</suite>
