@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [anything]" parallel="tests">
+  <listeners>
+    <listener class-name="com.BaseListen"/>
+  </listeners>
+  <test thread-count="5" name="jaichatai(failed)" parallel="tests">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.bit.test.RegressionTest">
+        <methods>
+          <include name="m2"/>
+          <include name="beforeMethod"/>
+          <include name="close"/>
+        </methods>
+      </class> <!-- com.bit.test.RegressionTest -->
+    </classes>
+  </test> <!-- jaichatai(failed) -->
+</suite> <!-- Failed suite [anything] -->

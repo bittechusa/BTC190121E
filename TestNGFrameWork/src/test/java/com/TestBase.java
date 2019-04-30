@@ -4,46 +4,52 @@ import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.AfterSuite;
 
 public class TestBase {
-  @Test
-  public void f() {
-  }
-  @BeforeMethod
-  public void beforeMethod() {
-  }
+ 
+	protected WebDriver driver;
+	  @Parameters({"browser"})
+	  @BeforeMethod
+	  public void beforeMethod(String b) 
+	  {
+		  if(b.equals("chrome"))
+		  {
+			  driver=new ChromeDriver();
+		  }
+		  else if(b.equals("firefox"))
+		  {
+			  driver=new FirefoxDriver();
+		  }
+		  System.out.println("bm");
+	  }
+	  @AfterMethod
+	  public void close(ITestResult r)
+	  {
+		  if(r.getStatus()==ITestResult.FAILURE)
+		  {
+			  System.out.println("take screenshot");
+		  }
 
-  @AfterMethod
-  public void afterMethod() {
-  }
+		  else if(r.getStatus()==ITestResult.SKIP)
+		  {
+			  System.out.println("skipped");
+		  }
 
-  @BeforeClass
-  public void beforeClass() {
-  }
-
-  @AfterClass
-  public void afterClass() {
-  }
-
-  @BeforeTest
-  public void beforeTest() {
-  }
-
-  @AfterTest
-  public void afterTest() {
-  }
-
-  @BeforeSuite
-  public void beforeSuite() {
-  }
-
-  @AfterSuite
-  public void afterSuite() {
-  }
+		  if(r.getStatus()==ITestResult.SUCCESS)
+		  {
+			  System.out.println("success");
+		  }
+		  driver.quit();
+	  }
 
 }

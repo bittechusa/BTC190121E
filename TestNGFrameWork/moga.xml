@@ -1,7 +1,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="any">
 <test name="whatever">
+<groups>
+<run>
+<include name="smoke"></include>
+</run>
+</groups>
 <classes>
+<class name="com.TestSmoke">
 <class name="com.TestSmoke">
 <methods>
 <include name ="m1"></include>

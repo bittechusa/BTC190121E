@@ -4,6 +4,75 @@
   <artifactId>TestNGFrameWork</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <dependencies>
+  <dependency>
+
+    <groupId>org.apache.poi</groupId>
+
+    <artifactId>poi-examples</artifactId>
+
+    <version>3.12-beta1</version>
+
+   </dependency>
+
+   <dependency>
+
+    <groupId>org.apache.poi</groupId>
+
+    <artifactId>poi</artifactId>
+
+    <version>3.12-beta1</version>
+
+   </dependency>
+
+   <dependency>
+
+    <groupId>org.apache.poi</groupId>
+
+    <artifactId>poi-excelant</artifactId>
+
+    <version>3.12-beta1</version>
+
+   </dependency>
+
+   <dependency>
+
+    <groupId>org.apache.poi</groupId>
+
+    <artifactId>poi-ooxml</artifactId>
+
+    <version>3.12-beta1</version>
+
+   </dependency>
+
+   <dependency>
+
+    <groupId>org.apache.poi</groupId>
+
+    <artifactId>poi-ooxml-schemas</artifactId>
+
+    <version>3.12-beta1</version>
+
+   </dependency>
+
+   <dependency>
+
+    <groupId>org.apache.poi</groupId>
+
+    <artifactId>poi-scratchpad</artifactId>
+
+    <version>3.12-beta1</version>
+
+   </dependency>
+
+   <dependency>
+
+    <groupId>org.apache.poi.DELETE</groupId>
+
+    <artifactId>poi</artifactId>
+
+    <version>3.0-FINAL</version>
+
+   </dependency>
   <!-- https://mvnrepository.com/artifact/org.testng/testng -->
 <dependency>
     <groupId>org.testng</groupId>
