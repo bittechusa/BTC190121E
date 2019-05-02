@@ -1,0 +1,3 @@
+this is txt file
+we are learning how to read txt file
+beside that exception

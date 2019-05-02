@@ -2,10 +2,13 @@ package com;
 
 import org.testng.annotations.Test;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
+import java.util.Properties;
 
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -23,39 +26,117 @@ public void test1(Object u,Object p)
 	dr.findElement(By.id("email")).sendKeys(u.toString());
 	dr.findElement(By.id("pass")).sendKeys(p.toString());
 	}
-	
-	@DataProvider(name="xldata")
-	public Object[][] readXlSheet() throws IOException
-	{
-		File f=new File("/Users/bittechconsulting/eclipse-workspace/new/TestNGFrameWork/book.xlsx");
-		FileInputStream fi=new FileInputStream(f);
-		XSSFWorkbook book=new XSSFWorkbook(fi);
-		XSSFSheet sheet=book.getSheetAt(0);
-		//sheet.getRow(1).getCell(1).getStringCellValue();
-		int cell=sheet.getRow(0).getLastCellNum();
-		int row=sheet.getLastRowNum();
-		Object [][] datas=new Object[row][cell];
-		for(int i=1;i<row;i++)
+
+public static Properties readProperty() throws IOException
+{
+	f=new File("/Users/bittechconsulting/eclipse-workspace/new/TestNGFrameWork/config.properties");
+	fi = new FileInputStream(f);
+	Properties p=new Properties();
+	p.load(fi);
+	return p;
+}
+
+
+@Test
+public void readTxt() throws IOException{
+	StringBuffer s = null;
+	try {
+		FileReader f=new FileReader(new File("/Users/bittechconsulting/Desktop/BTC190121E/TestNGFrameWork/hello.txt"));
+		BufferedReader r=new BufferedReader(f);
+		 s=new StringBuffer();
+		String line=r.readLine();
+		while(line!=null)
 		{
-			for(int j=0;j<cell;j++)
+			s.append(line).append(System.lineSeparator());
+			line=r.readLine();
+		}
+	} catch (FileNotFoundException e) {
+		// TODO Auto-generated catch block
+		//e.printStackTrace();
+		System.out.println(e.getMessage());
+		System.out.println("continue");
+	}
+	System.out.println(s);
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+static File f;
+XSSFWorkbook book;
+static FileInputStream fi;
+XSSFSheet sheet;
+Object [][] datas;
+	@DataProvider(name="xldata")
+	public Object[][] readXlSheet() throws IOException 
+	{
+		
+		try {
+			f=new File("/Users/bittechconsulting/eclipse-workspace/new/TestNGFrameWork/book.xlsx");
+			fi = new FileInputStream(f);
+			book = new XSSFWorkbook(fi);
+			 sheet=book.getSheetAt(0);
+			//sheet.getRow(1).getCell(1).getStringCellValue();
+			int cell=sheet.getRow(0).getLastCellNum();
+			int row=sheet.getLastRowNum();
+			 datas=new Object[row][cell];
+			for(int i=1;i<row;i++)
 			{
-				//System.out.println(sheet.getRow(i).getCell(j));
-				XSSFCell c=sheet.getRow(i).getCell(j);
-				switch(c.getCellType())
+				for(int j=0;j<cell;j++)
 				{
-				case XSSFCell.CELL_TYPE_NUMERIC:
-				{
-					System.out.println(c.getNumericCellValue());
-					datas[i-1][j]=c.getNumericCellValue();
-				}
-				case XSSFCell.CELL_TYPE_STRING:
-				{
-					System.out.println(sheet.getRow(i).getCell(j).getStringCellValue());
-					datas[i-1][j]=c.getStringCellValue();
-				}
+					//System.out.println(sheet.getRow(i).getCell(j));
+					XSSFCell c=sheet.getRow(i).getCell(j);
+					switch(c.getCellType())
+					{
+					case XSSFCell.CELL_TYPE_NUMERIC:
+					{
+						System.out.println(c.getNumericCellValue());
+						datas[i-1][j]=c.getNumericCellValue();
+					}
+					case XSSFCell.CELL_TYPE_STRING:
+					{
+						System.out.println(sheet.getRow(i).getCell(j).getStringCellValue());
+						datas[i-1][j]=c.getStringCellValue();
+					}
+					}
 				}
 			}
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+			System.out.println("file not found");
 		}
+		catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("file not straming");
+		}
+		catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("file path not found");
+		}
+		
+		finally
+		{
+			if(fi!=null)
+			{
+				fi.close();
+			}
+			if(book!=null)
+			{
+				book.close();
+			}
+		}
+		
 		return datas;
 		
 	}

@@ -1,9 +1,16 @@
 package com.bit.test;
 
 import org.testng.annotations.Test;
+
+import com.ReadData;
+
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+
+import java.io.IOException;
+import java.util.Properties;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -34,11 +41,24 @@ public class BaseTest {
   {
 	  System.out.println("ac");
   }
-
+Properties prop;
+WebDriver driver;
   @BeforeTest
-  public void beforeTest() 
+  public void beforeTest() throws IOException 
   {
 	  System.out.println("bt");
+	  //prop=ReadData.readProperty();
+	  //String b=prop.getProperty("browser");
+	  String b=System.getProperty("driver");
+	 // String b=System.getProperty("runMode");
+	  if(b.equals("chrome"))
+	  {
+		  driver=new ChromeDriver();
+	  }
+	  else if(b.equals("firefox"))
+	  {
+		  driver=new FirefoxDriver();
+	  }
   }
 
   @AfterTest
