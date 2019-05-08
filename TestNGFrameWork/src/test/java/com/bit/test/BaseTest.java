@@ -47,7 +47,7 @@ WebDriver driver;
   public void beforeTest() throws IOException 
   {
 	  System.out.println("bt");
-	  //prop=ReadData.readProperty();
+	  prop=ReadData.readProperty();
 	  //String b=prop.getProperty("browser");
 	  String b=System.getProperty("driver");
 	 // String b=System.getProperty("runMode");
