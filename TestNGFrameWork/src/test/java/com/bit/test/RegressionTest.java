@@ -1,11 +1,14 @@
 package com.bit.test;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import com.ReadData;
 import com.TestBase;
+import com.bit.weListner.MyListner;
 
 public class RegressionTest extends TestBase{
 //
@@ -30,4 +33,19 @@ public class RegressionTest extends TestBase{
 		  System.out.println("test3");
 		  Assert.fail();
 	  }
+	
+	@Test
+	public void test4()
+	{
+		MyListner ml=new MyListner();
+	EventFiringWebDriver f=new EventFiringWebDriver(driver);
+	f.register(ml);
+	f.findElement(By.id(""));
+	f.navigate().back();
+	}
+	
+	
+	
+	
+	
 }
