@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="grid practice" parallel ="methods" thread-count="5">
+<test name="test1">
+<parameter name="browser" value="firefox"></parameter>
+<parameter name="runmode" value="remote"></parameter>
+<classes>
+<class name="com.bit.test.grid.GridPractice"></class>
+
+</classes>
+
+</test>
+
+
+</suite>
