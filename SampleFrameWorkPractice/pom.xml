@@ -92,7 +92,7 @@
 
     <artifactId>poi</artifactId>
 
-    <version>3.12-beta1</version>
+    <version>3.17</version>
 
    </dependency>
 
